@@ -1,7 +1,6 @@
 
 # app: 
 service: insta-ritter-grp3 # NOTE: update this with your service name
-# tenant: lucastagliani
 
 provider:
   name: aws
@@ -12,7 +11,7 @@ region: us-east-1
 
 functions:
   photos:
-    handler: handler.photos
+    handler: src/back/app/handler.photos
     events: 
       - http:
           path: photos
@@ -20,7 +19,7 @@ functions:
           cors: true
   
   photoById:
-    handler: handler.photoById
+    handler: src/back/app/handler.photoById
     events: 
       - http:
           path: photos/{photo_id}
