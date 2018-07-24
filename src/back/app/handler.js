@@ -27,7 +27,7 @@ module.exports.photos = (event, context, callback) => {
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
-// RUN LOCAL: serverless invoke local --function photoById -path data.json
+// RUN LOCAL: serverless invoke local --function photoById -path mock.json
 module.exports.photoById = (event, context, callback) => {
   const response = {
     statusCode: 200,
