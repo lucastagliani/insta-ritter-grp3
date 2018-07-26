@@ -29,4 +29,11 @@ functions:
             parameters:
               paths:
                 photo_id: true
-                
+  # TODO LUCAS: https://github.com/deliveryhero/serverless-aws-documentation
+  photo:
+    handler: src/back/app/handler.photo
+    events: 
+      - http:
+          path: photo
+          method: post
+          cors: true                
