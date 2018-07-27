@@ -52,52 +52,58 @@ module.exports.photoById = (event, context, callback) => {
 // RUN LOCAL: serverless invoke local --function photo
 module.exports.photo = (event, context, callback) => {
   console.log('1.78');
-  let request = JSON.parse(event.body);
+  const request = JSON.parse(event.body);
   console.log('request.base64String:', request.base64String);
-  let base64String =  request.base64String;
-  let buffer = new Buffer(base64String, 'base64');
-  let fileMime = fileType(buffer)
+  const { base64String } = request;
+  const buffer = new Buffer(base64String, 'base64');
+  const fileMime = fileType(buffer)
   if (fileMime == null) {
     return context.fail('The string supplied is not a file type.');
   }
 
-  let file = getFile(fileMime, buffer);
-  let params = file.params;
+  const file = getFile(fileMime, buffer);
+  const params = file.params;
 
-  s3.putObject(params, function (err, data) {
+  s3.putObject(params, (err) => {
     if (err) {
       return console.log(err);
     }
 
-    return console.log('File URL', file.full_path);
+    return console.log('File URL', file.uploadFile.full_path);
   });
-};
 
-let getFile = function (fileMime, buffer) {
-  let fileExt = fileMime.ext;
-  // let hash = sha1(new Buffer(new Date().toString()));
-  let now = moment().format('YYYY-MM-DD HH:mm:ss');
-
-  let filePath = now.replace(' ', '').replace(':', '').replace('-','') + '/';
-  let fileName = unixTime(now) + '.' + fileExt;
-  let fileFullName = filePath + fileName;
-  let fileFullPath = 'https://s3.amazonaws.com/instaritter/' + fileFullName;
-
-  let params = {
-    Bucket: 'instaritter',
-    Key: fileFullname + fileExt, //this is simply the filename and the extensions e.g fileFullname + fileExt
-    Body: buffer
+  const response = {
+    statusCode: 201,    
   }
 
-  let uploadFile = {
+  callback(null, response);
+};
+
+let getFile = (fileMime, buffer) => {
+  const fileExt = fileMime.ext;
+  // let hash = sha1(new Buffer(new Date().toString()));
+  const now = moment().format('YYYY-MM-DD HH:mm:ss');
+
+  const filePath = now.replace(' ', '').replace(/:/g, '').replace(/-/g,'') + '/';
+  const fileName = `${Date.now()}.${fileExt}`;
+  const fileFullName = filePath + fileName;
+  const fileFullPath = 'https://s3.amazonaws.com/instaritter/' + fileFullName;
+
+  const params = {
+    Bucket: 'instaritter',
+    Key: fileFullName, // this is simply the filename and the extensions e.g fileFullname + fileExt
+    Body: buffer,
+  }
+
+  const uploadFile = {
     size: buffer.toString('ascii').length,
     type: fileMime.mime,
     name: fileName,
-    full_path: fileFullPath
+    full_path: fileFullPath,
   }
 
   return {
-    'params': params,
-    'uploadFile': uploadFile
+    params,
+    uploadFile,
   }
 }

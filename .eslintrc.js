@@ -1,0 +1,1 @@
+module.exports = { "extends": [ "airbnb-base" ], "globals": { "expect": true, "describe": true, "it": true, "beforeEach": true, "before": true } };
