@@ -52,6 +52,7 @@ module.exports.photoById = (event, context, callback) => {
 module.exports.photo = (event, context, callback) => {
   let request = event.body;
   let base64String = request.base64String;
+  console.log('base64String', base64String);
   let buffer = new Buffer(base64String, 'base64');
   let fileMime = fileType(buffer)
   if (fileMime == null) {
