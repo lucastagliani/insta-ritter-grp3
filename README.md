@@ -20,6 +20,7 @@ Tecnologias:
 - NodeJS
 - HTML
 - Javascript
+- Ajax
 
 ##########################################
 
