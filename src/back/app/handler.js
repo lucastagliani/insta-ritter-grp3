@@ -4,6 +4,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const moment = require('moment');
 const fileType = require('file-type');
+// const sha1 = require('sha1');
 
 // RUN LOCAL: serverless invoke local --function photos
 module.exports.photos = (event, context, callback) => {
@@ -32,7 +33,7 @@ module.exports.photos = (event, context, callback) => {
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
-// RUN LOCAL: serverless invoke local --function photoById --path src/back/data/mock_photoById.json
+// RUN LOCAL: serverless invoke local --function photoById --path src/back/data/mock_photo.json
 module.exports.photoById = (event, context, callback) => {
   const response = {
     statusCode: 200,
@@ -50,9 +51,10 @@ module.exports.photoById = (event, context, callback) => {
 
 // RUN LOCAL: serverless invoke local --function photo
 module.exports.photo = (event, context, callback) => {
-  let request = event.body;
-  let base64String = request.base64String;
-  console.log('base64String', base64String);
+  console.log('1.78');
+  let request = JSON.parse(event.body);
+  console.log('request.base64String:', request.base64String);
+  let base64String =  request.base64String;
   let buffer = new Buffer(base64String, 'base64');
   let fileMime = fileType(buffer)
   if (fileMime == null) {
@@ -69,21 +71,14 @@ module.exports.photo = (event, context, callback) => {
 
     return console.log('File URL', file.full_path);
   });
-
-
-  // const response = {
-  //   statusCode: 200
-  // };
-
-  // callback(null, response);
 };
 
 let getFile = function (fileMime, buffer) {
   let fileExt = fileMime.ext;
-  let hash = sha1(new Buffer(new Date().toString()));
+  // let hash = sha1(new Buffer(new Date().toString()));
   let now = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  let filePath = hash + '/';
+  let filePath = now.replace(' ', '').replace(':', '').replace('-','') + '/';
   let fileName = unixTime(now) + '.' + fileExt;
   let fileFullName = filePath + fileName;
   let fileFullPath = 'https://s3.amazonaws.com/instaritter/' + fileFullName;
