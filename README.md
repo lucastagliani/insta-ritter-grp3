@@ -1,8 +1,11 @@
 # insta-ritter-grp3
+- Vladson Freire
+- Renan Drabach
+- Lucas Tagliani
+- Alécio Dalprá
+
 
 O aplicativo insta-ritter-grp3 permite salvar/postar fotos na nuvem e consultá-las posteriormente.
-
-Desde a primeira versão o insta-ritter-grp3 já apresenta uma camada de autenticação para garantir que somente fotos corretas sejam salvas e apenas quem seja autorizado possa consultá-las.
 
 O insta-ritter-grp3 utiliza a estrutura de serviços:
 - Amazon API Gateway;
@@ -27,11 +30,13 @@ V 0.1 - A versão beta do insta-ritter-grp3 possui as seguintes features:
 - Autenticação (Facebook ou própria);
 
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 
 V 1.0
 - Utilização de filas para postagem e consumo de fotos;
 - Possibilidade de editar informações de fotos já gravadas;
+![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP1.png)
 
 V2.0
 - Inclusão de fila de erro com repostagem de mensagem para consumo;
+![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP2.png)
