@@ -85,7 +85,7 @@ let getFile = function (fileMime, buffer) {
   let filePath = hash + '/';
   let fileName = unixTime(now) + '.' + fileExt;
   let fileFullName = filePath + fileName;
-  let fileFullPath = 'OUR BUCKET PATH' + fileFullName;
+  let fileFullPath = 'https://s3.amazonaws.com/instaritter/' + fileFullName;
 
   let params = {
     Bucket: 'instaritter',
