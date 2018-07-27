@@ -26,7 +26,8 @@ V 0.1 - A versão beta do insta-ritter-grp3 possui as seguintes features:
 - Consultar fotos;
 - Autenticação (Facebook ou própria);
 
-![Alt text] (https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
+![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
 V 1.0
 - Utilização de filas para postagem e consumo de fotos;
