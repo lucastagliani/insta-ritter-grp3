@@ -31,13 +31,16 @@ V 0.1 - A versão beta do insta-ritter-grp3 possui as seguintes features:
 - Autenticação (Facebook ou própria);</p>
 
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
+
 ---------------------------------
 
 V 1.0
 - Utilização de filas para postagem e consumo de fotos;
-- Possibilidade de editar informações de fotos já gravadas;
+- Possibilidade de editar informações de fotos já gravadas;</p>
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP1.png)
 
+---------------------------------
+
 V2.0
-- Inclusão de fila de erro com repostagem de mensagem para consumo;
+- Inclusão de fila de erro com repostagem de mensagem para consumo;</p>
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP2.png)
