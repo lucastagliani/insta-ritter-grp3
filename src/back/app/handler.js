@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS = require('aws-sdk');
-const s3 = AWS.s3();
+const s3 = new AWS.S3();
 const moment = require('moment');
 const fileType = require('file-type');
 
@@ -48,7 +48,7 @@ module.exports.photoById = (event, context, callback) => {
   callback(null, response);
 };
 
-// upload
+// RUN LOCAL: serverless invoke local --function photo
 module.exports.photo = (event, context, callback) => {
   let request = event.body;
   let base64String = request.base64String;
