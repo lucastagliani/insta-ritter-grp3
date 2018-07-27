@@ -1,11 +1,11 @@
 # insta-ritter-grp3
-
+---------------------------------
 - Vladson Freire
 - Renan Drabach
 - Lucas Tagliani
 - Alécio Dalprá
 
-
+---------------------------------
 O aplicativo insta-ritter-grp3 permite salvar/postar fotos na nuvem e consultá-las posteriormente.
 
 O insta-ritter-grp3 utiliza a estrutura de serviços:
@@ -28,8 +28,8 @@ ROADMAP
 V 0.1 - A versão beta do insta-ritter-grp3 possui as seguintes features:
 - Gravar/postar fotos na nuvem;
 - Consultar fotos;
-- Autenticação (Facebook ou própria);
----------------------------------
+- Autenticação (Facebook ou própria);</p>
+
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
 ---------------------------------
 
