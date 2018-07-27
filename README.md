@@ -1,4 +1,5 @@
 # insta-ritter-grp3
+
 - Vladson Freire
 - Renan Drabach
 - Lucas Tagliani
@@ -28,9 +29,9 @@ V 0.1 - A versão beta do insta-ritter-grp3 possui as seguintes features:
 - Gravar/postar fotos na nuvem;
 - Consultar fotos;
 - Autenticação (Facebook ou própria);
-
+---------------------------------
 ![Alt text](https://github.com/lucastagliani/insta-ritter-grp3/blob/master/doc/MVP0.png)
-
+---------------------------------
 
 V 1.0
 - Utilização de filas para postagem e consumo de fotos;
