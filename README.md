@@ -8,19 +8,16 @@
 ---------------------------------
 O aplicativo insta-ritter-grp3 permite salvar/postar fotos na nuvem e consultá-las posteriormente.
 
-O insta-ritter-grp3 utiliza a estrutura de serviços:
+
+Tecnologias utilizadas na aplicação:
+- NodeJS
 - Amazon API Gateway;
 - Amazon Lambda;
+- Amazon RDS Database;
 - Amazon S3;
 - Serverless;
 - Cognito Identity Provider;
-- R3 Database;
 
-Tecnologias:
-- NodeJS
-- HTML
-- Javascript
-- Ajax
 
 ##########################################
 
