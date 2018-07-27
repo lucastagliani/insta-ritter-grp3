@@ -2,7 +2,15 @@
 
 O aplicativo insta-ritter-grp3 permite salvar/postar fotos na nuvem e consultá-las posteriormente.
 
-Desde a primeira versão o insta-ritter-grp3 já apresenta uma camada de autenticação para garantir que somente suas fotos sejam salvas e apenas quem seja autorizado possa consultá-las.
+Desde a primeira versão o insta-ritter-grp3 já apresenta uma camada de autenticação para garantir que somente fotos corretas sejam salvas e apenas quem seja autorizado possa consultá-las.
+
+O insta-ritter-grp3 utiliza a estrutura de serviços:
+- Amazon API Gateway;
+- Amazon Lambda functions;
+- Amazon Storage S3;
+- Serverless;
+
+##########################################
 
 ROADMAP
 
@@ -17,4 +25,4 @@ V 1.0
 - Usuário pode, além de consultar, alterar informações de uma foto;
 
 V2.0
-- APIs, Gateway e Workers em containers com ativação automática conforme volumetria de requisições.
+- Inclusão de fila de erro com repostagem de mensagem para consumo;
