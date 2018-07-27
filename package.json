@@ -1,0 +1,25 @@
+{
+  "name": "insta-ritter-grp3",
+  "version": "1.0.0",
+  "description": "O aplicativo insta-ritter-grp3 permite salvar/postar fotos na nuvem e consultá-las posteriormente.",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.282.1",
+    "file-type": "^8.1.0",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucastagliani/insta-ritter-grp3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucastagliani/insta-ritter-grp3/issues"
+  },
+  "homepage": "https://github.com/lucastagliani/insta-ritter-grp3#readme"
+}
